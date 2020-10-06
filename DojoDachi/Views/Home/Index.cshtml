@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Hello!</title>
+        <link rel="stylesheet" href="~/css/style.css"/>
+        <script src="~/js/script.js"></script>
+    </head>
+
+    <body>
+        <div>
+            Fullness: <span id="fullness">@ViewBag.fullness</span>
+            Happiness: <span id="happiness">@ViewBag.happiness</span>
+            Meals: <span id="meals">@ViewBag.meals</span>
+            Energy: <span id="energy">@ViewBag.energy</span>
+        </div>
+        <div>
+            <img src="x.jpg" alt="happy">
+            <p id="status">@ViewBag.status</p>
+        </div>
+        @{
+            if(ViewBag.fullness <= 0 || ViewBag.happiness <= 0 || 
+                ViewBag.energy >= 100 && ViewBag.fullness >= 100 && ViewBag.happiness >= 100) {
+                <a href="reset"><button>Reset?</button></a>
+            } else {
+                <div id="buttons">
+                    <button id="feed">Feed</button>
+                    <button id="play">Play</button>
+                    <button id="work">Work</button>
+                    <button id="sleep">Sleep</button>
+                </div>
+            }
+        }
+    </body>
+</html>
